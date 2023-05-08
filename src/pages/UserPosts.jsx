@@ -6,7 +6,6 @@ import { Spinner, Table } from "reactstrap";
 import ErrorPage from "../components/ErrorPage";
 import ModalStrap from "../components/ModalStrap";
 import UserPostItem from "../components/UserPostItem";
-
 const UserPosts = () => {
   const [modal, setModal] = useState(false);
   const { id } = useParams();
@@ -111,5 +110,4 @@ const UserPosts = () => {
     </>
   );
 };
-
 export default UserPosts;

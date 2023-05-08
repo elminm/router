@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Table } from "reactstrap";
+import { Spinner, Table } from "reactstrap";
 
 const Users = () => {
   const [data, setData] = useState({
@@ -37,7 +37,7 @@ const Users = () => {
   return (
     <>
       {data.error && "error occurred"}
-      {data.loader && "Spinner loader"}
+      {data.loader && <Spinner color="danger">Loading...</Spinner>}
       {data.data && (
         <Table>
           <thead>
