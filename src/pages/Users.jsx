@@ -1,42 +1,11 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Spinner, Table } from "reactstrap";
 
-const Users = () => {
-  const [data, setData] = useState({
-    data: undefined,
-    loader: true,
-    error: undefined,
-  });
-  useEffect(() => {
-    setData((prev) => ({
-      ...prev,
-      data: undefined,
-      loader: true,
-      error: undefined,
-    }));
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then(({ data }) =>
-        setData((prev) => ({
-          ...prev,
-          data,
-          loader: false,
-          error: undefined,
-        }))
-      )
-      .catch(({ message }) =>
-        setData({
-          data: undefined,
-          loader: false,
-          error: message,
-        })
-      );
-  }, []);
+const Users = ({ data }) => {
   return (
     <>
-      {data.error && "error occurred"}
+      {data.error && "Error Occurred"}
       {data.loader && <Spinner color="danger">Loading...</Spinner>}
       {data.data && (
         <Table>

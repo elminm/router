@@ -10,7 +10,7 @@ import {
 
 function ModalStrap({ toggle, modal, title, body, changePost, saveData }) {
   return (
-    <div>
+    <>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
         <ModalBody>
@@ -31,7 +31,7 @@ function ModalStrap({ toggle, modal, title, body, changePost, saveData }) {
           </Button>
         </ModalFooter>
       </Modal>
-    </div>
+    </>
   );
 }
 
