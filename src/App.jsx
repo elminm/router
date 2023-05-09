@@ -6,7 +6,6 @@ import CreatePost from "./components/CreatePost";
 import { Nav, NavItem } from "reactstrap";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import UserErrorr from "./components/UserErrorr";
 
 const App = () => {
   const [data, setData] = useState({
@@ -64,7 +63,6 @@ const App = () => {
           element={<Users data={data} setData={setData} />}
         ></Route>
         <Route path="/userposts/:id" element={<UserPosts />}></Route>
-        <Route path="*" element={<UserErrorr />} />
       </Routes>
     </div>
   );
