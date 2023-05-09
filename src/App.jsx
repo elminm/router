@@ -5,7 +5,7 @@ import UserPosts from "./pages/UserPosts";
 
 const App = () => {
   return (
-    <div>
+    <div style={{ padding: "3%" }}>
       <nav>
         <ul>
           <li>

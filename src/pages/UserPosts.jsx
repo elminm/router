@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Spinner, Table } from "reactstrap";
+import { Fragment, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Col, Spinner } from "reactstrap";
 import ErrorPage from "../components/ErrorPage";
 import ModalStrap from "../components/ModalStrap";
 import UserPostItem from "../components/UserPostItem";
@@ -79,24 +79,16 @@ const UserPosts = () => {
       {userPost.loader && <Spinner>Loading...</Spinner>}
       {userPost.data && userPost.data.length > 0 && (
         <>
-          <Table dark>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Body</th>
-                <th>Edit</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
+          {userPost.data.map((userpost) => (
+            <Col key={userpost.id}>
               <UserPostItem
-                data={userPost.data}
                 updateData={updateData}
                 removeItem={removeItem}
+                key={userPost.id}
+                {...userpost}
               />
-            </tbody>
-          </Table>
+            </Col>
+          ))}
           <ModalStrap
             modal={modal}
             toggle={toggle}

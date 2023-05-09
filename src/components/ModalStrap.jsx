@@ -19,6 +19,8 @@ function ModalStrap({ toggle, modal, title, body, changePost, saveData }) {
             value={title}
           />
           <Input
+            type="textarea"
+            rows="5"
             onChange={(e) => changePost("body", e.target.value)}
             value={body}
           />

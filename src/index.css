@@ -1,0 +1,10 @@
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.card-footer .crud-icon {
+    display: flex;
+    align-items: center;
+}
+    
