@@ -1,4 +1,4 @@
-const UserErrorPage = () => {
+const UserErrorr = () => {
   return (
     <h1
       style={{
@@ -6,9 +6,9 @@ const UserErrorPage = () => {
         justifyContent: "center",
       }}
     >
-      404 Not Found
+      404 Not Found!
     </h1>
   );
 };
 
-export default UserErrorPage;
+export default UserErrorr;

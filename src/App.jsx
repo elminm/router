@@ -4,9 +4,9 @@ import Users from "./pages/Users";
 import UserPosts from "./pages/UserPosts";
 import CreatePost from "./components/CreatePost";
 import { Nav, NavItem } from "reactstrap";
-import UserErrorPage from "./components/UserErrorPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import UserErrorr from "./components/UserErrorr";
 
 const App = () => {
   const [data, setData] = useState({
@@ -64,7 +64,7 @@ const App = () => {
           element={<Users data={data} setData={setData} />}
         ></Route>
         <Route path="/userposts/:id" element={<UserPosts />}></Route>
-        <Route path="*" element={<UserErrorPage />} />
+        <Route path="*" element={<UserErrorr />} />
       </Routes>
     </div>
   );
